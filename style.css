@@ -1,0 +1,14 @@
+.rows {
+    height: 20px;
+    border-bottom: solid black 2px;
+    padding: 10px;
+}
+.rows_content {
+    display: inline-block;
+    width: 100px;
+}
+.rows_id {
+    display: inline-block;
+    width: 30px;
+    color: #ff0000;
+}
