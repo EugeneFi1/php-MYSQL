@@ -2,6 +2,7 @@
 <?php
     $accounts  = getAccounts($link);
 
+    echo "<h1>Accounts table:</h1>";
     echo "<div class='accounts_table'>";
     foreach($accounts as $a => $index) {
         echo "<div class='rows'>";
@@ -20,4 +21,6 @@
     } 
     echo "<div>"; 
 ?>
-
+<?php
+            include "usersTable.php"; 
+?>

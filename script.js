@@ -8,7 +8,7 @@ function deleteElement(a) {
         dataType: 'html',
         cache: false,       
         success: function(data) {
-	    	$("#edit").load("accountsTable.php");
+            $("#edit").load("accountsTable.php");
 		}
     });
 };
@@ -26,5 +26,5 @@ function editElement(s) {
     });
 };
 
-   
+
    
