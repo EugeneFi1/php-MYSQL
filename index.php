@@ -8,12 +8,10 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-   <div id='edit'>
+    <div id='edit'>
         <?php
             include "accountsTable.php"; 
         ?>
-        
     </div>
-    
 </body>
 </html>
