@@ -5,7 +5,7 @@
     }
     $account = getAccountById($id, $link);
     
-    echo "<div class='accounts_table' id='find_button'>";
+    echo "<div class='accounts_table'>";
     foreach($account as $a => $index) {
         echo "<div class='rows'>";
             foreach($index as $key => $value) {
@@ -13,10 +13,36 @@
                     echo "<div class='rows_id'>".$value."</div>";
                     continue;
                 }
-                echo "<div class='rows_content'>".$value."</div>";
+                echo "<div class='rows_content'>
+                       <input type='text' value='".$value."' id='".$key."'></div>";
             }   
         echo "</div>";
     } 
     echo "<div>"; 
-    
+  
+    echo "<div class='rows_buttons'>";
+        echo "<button type='button' onclick='update(".$id.")'>update</button>";
+        echo "<button type='button' onclick='homePage()'>cancel</button>";
+    echo "</div>"
 ?>
+
+<script>
+    function homePage() {
+        $("#edit").load("accountsTable.php");
+    };
+    
+    function update(a) {
+        var name = $("#name").val();
+        var lastname = $("#lastname").val();
+        var id = a;
+
+        $.ajax({
+        url: 'function.php',
+        type: 'GET',
+        data: { 'edit_id': id, 'name': name, 'lastname': lastname },
+        success: function(data) {
+	    	$("#edit").load("accountsTable.php");
+		}
+    });
+    }
+</script>
